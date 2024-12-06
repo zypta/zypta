@@ -53,12 +53,12 @@ jobs:
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
           coverage: none
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.6.1'
-          cache: 'npm'
-          registry-url: https://npm.pkg.github.com/
+#      - name: Setup Node.js
+#        uses: actions/setup-node@v4
+#        with:
+#          node-version: '20.6.1'
+#          cache: 'npm'
+#          registry-url: https://npm.pkg.github.com/
 
       - name: Install Dependencies
         run: |
@@ -69,8 +69,8 @@ jobs:
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nesbot/carbon:${{ matrix.carbon }}" "nunomaduro/collision:${{ matrix.collision }}" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
-          npm i
-          npm run build
+#          npm i
+#          npm run build
 
       - name: Execute tests
         run: vendor/bin/pest
