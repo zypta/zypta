@@ -101,10 +101,6 @@ class AdminPanelProvider extends PanelProvider
         );
 
         $panel->plugin(
-            FilamentTranslationsPlugin::make()
-        );
-
-        $panel->plugin(
             FilamentLanguageSwitcherPlugin::make()
         );
 
