@@ -24,7 +24,6 @@ use TomatoPHP\FilamentSaasPanel\FilamentSaasTeamsPlugin;
 use TomatoPHP\FilamentSettingsHub\FilamentSettingsHubPlugin;
 use TomatoPHP\FilamentSimpleTheme\FilamentSimpleThemePlugin;
 use TomatoPHP\FilamentTenancy\FilamentTenancyPlugin;
-use TomatoPHP\FilamentTranslations\FilamentTranslationsPlugin;
 use TomatoPHP\FilamentTypes\FilamentTypesPlugin;
 use TomatoPHP\FilamentUsers\FilamentUsersPlugin;
 
