@@ -11,7 +11,6 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Jetstream\HasTeams;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use TomatoPHP\FilamentLanguageSwitcher\Traits\InteractsWithLanguages;
 use TomatoPHP\FilamentMeta\Traits\HasMeta;
 use TomatoPHP\FilamentSaasPanel\Traits\InteractsWithTenant;
 
@@ -39,13 +38,12 @@ use TomatoPHP\FilamentSaasPanel\Traits\InteractsWithTenant;
 class Account extends Authenticatable implements HasAvatar, HasMedia, HasTenants
 {
     use HasFactory;
+    use HasMeta;
+    use HasTeams;
     use InteractsWithMedia;
+    use InteractsWithTenant;
     use Notifiable;
     use SoftDeletes;
-    use HasTeams;
-    use InteractsWithTenant;
-    use InteractsWithLanguages;
-    use HasMeta;
 
     /**
      * @var array

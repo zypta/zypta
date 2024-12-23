@@ -10,6 +10,11 @@ providers:
   - Filament\Tables\TablesServiceProvider
   - Filament\Widgets\WidgetsServiceProvider
   - TomatoPHP\FilamentUsers\FilamentUsersServiceProvider
+  - TomatoPHP\FilamentAccounts\FilamentAccountsServiceProvider
+  - TomatoPHP\FilamentSaasPanel\FilamentSaasPanelServiceProvider
+  - TomatoPHP\FilamentTypes\FilamentTypesServiceProvider
+  - TomatoPHP\FilamentSettingsHub\FilamentSettingsHubServiceProvider
+  - TomatoPHP\FilamentTranslations\FilamentTranslationsServiceProvider
   - App\Providers\Filament\AdminPanelProvider
 workbench:
   welcome: true

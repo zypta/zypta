@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Providers\Filament;
+namespace Tests;
 
-use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -18,14 +17,6 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use TomatoPHP\FilamentAccounts\FilamentAccountsPlugin;
-use TomatoPHP\FilamentLanguageSwitcher\FilamentLanguageSwitcherPlugin;
-use TomatoPHP\FilamentSaasPanel\FilamentSaasTeamsPlugin;
-use TomatoPHP\FilamentSettingsHub\FilamentSettingsHubPlugin;
-use TomatoPHP\FilamentSimpleTheme\FilamentSimpleThemePlugin;
-use TomatoPHP\FilamentTenancy\FilamentTenancyPlugin;
-use TomatoPHP\FilamentTranslations\FilamentTranslationsPlugin;
-use TomatoPHP\FilamentTypes\FilamentTypesPlugin;
 use TomatoPHP\FilamentUsers\FilamentUsersPlugin;
 
 class AdminPanelProvider extends PanelProvider
@@ -70,42 +61,6 @@ class AdminPanelProvider extends PanelProvider
         $panel->plugin(
             FilamentUsersPlugin::make()
                 ->useAvatar()
-        );
-        $panel->plugin(FilamentShieldPlugin::make());
-        $panel->plugin(FilamentSimpleThemePlugin::make());
-        $panel->plugin(FilamentSaasTeamsPlugin::make());
-        $panel->plugin(
-            FilamentTenancyPlugin::make()
-                ->panel('app')
-                ->allowImpersonate()
-        );
-        $panel->plugin(
-            FilamentAccountsPlugin::make()
-                ->useTypes()
-                ->canLogin()
-                ->canBlocked()
-                ->useAvatar()
-                ->useTeams()
-                ->useImport()
-                ->useExport()
-                ->useImpersonate()
-                ->impersonateRedirect('/users')
-        );
-
-        $panel->plugin(
-            FilamentTypesPlugin::make()
-        );
-
-        $panel->plugin(
-            FilamentSettingsHubPlugin::make()
-        );
-
-        $panel->plugin(
-            FilamentTranslationsPlugin::make()
-        );
-
-        $panel->plugin(
-            FilamentLanguageSwitcherPlugin::make()
         );
 
         return $panel;

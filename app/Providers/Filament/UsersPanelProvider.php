@@ -17,6 +17,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use TomatoPHP\FilamentLanguageSwitcher\FilamentLanguageSwitcherPlugin;
 use TomatoPHP\FilamentSaasPanel\FilamentSaasPanelPlugin;
 use TomatoPHP\FilamentSimpleTheme\FilamentSimpleThemePlugin;
 
@@ -39,20 +40,6 @@ class UsersPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
-            ])
-            ->middleware([
-                EncryptCookies::class,
-                AddQueuedCookiesToResponse::class,
-                StartSession::class,
-                AuthenticateSession::class,
-                ShareErrorsFromSession::class,
-                VerifyCsrfToken::class,
-                SubstituteBindings::class,
-                DisableBladeIconComponents::class,
-                DispatchServingFilamentEvent::class,
-            ])
-            ->authMiddleware([
-                Authenticate::class,
             ]);
 
         $panel->plugin(
@@ -71,6 +58,25 @@ class UsersPanelProvider extends PanelProvider
         );
 
         $panel->plugin(FilamentSimpleThemePlugin::make());
+
+        $panel->plugin(
+            FilamentLanguageSwitcherPlugin::make()
+        );
+
+        $panel->middleware([
+            EncryptCookies::class,
+            AddQueuedCookiesToResponse::class,
+            StartSession::class,
+            AuthenticateSession::class,
+            ShareErrorsFromSession::class,
+            VerifyCsrfToken::class,
+            SubstituteBindings::class,
+            DisableBladeIconComponents::class,
+            DispatchServingFilamentEvent::class,
+        ])
+            ->authMiddleware([
+                Authenticate::class,
+            ]);
 
         return $panel;
     }

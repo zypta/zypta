@@ -17,7 +17,8 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use TomatoPHP\FilamentSaasPanel\FilamentSaasPanelPlugin;
+use TomatoPHP\FilamentLanguageSwitcher\FilamentLanguageSwitcherPlugin;
+use TomatoPHP\FilamentSimpleTheme\FilamentSimpleThemePlugin;
 use TomatoPHP\FilamentTenancy\FilamentTenancyAppPlugin;
 
 class AppPanelProvider extends PanelProvider
@@ -56,6 +57,12 @@ class AppPanelProvider extends PanelProvider
             ]);
 
         $panel->plugin(FilamentTenancyAppPlugin::make());
+
+        $panel->plugin(FilamentSimpleThemePlugin::make());
+
+        $panel->plugin(
+            FilamentLanguageSwitcherPlugin::make()
+        );
 
         return $panel;
     }
