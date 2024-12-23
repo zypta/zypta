@@ -14,7 +14,6 @@ providers:
   - TomatoPHP\FilamentSaasPanel\FilamentSaasPanelServiceProvider
   - TomatoPHP\FilamentTypes\FilamentTypesServiceProvider
   - TomatoPHP\FilamentSettingsHub\FilamentSettingsHubServiceProvider
-  - TomatoPHP\FilamentTranslations\FilamentTranslationsServiceProvider
   - App\Providers\Filament\AdminPanelProvider
 workbench:
   welcome: true
