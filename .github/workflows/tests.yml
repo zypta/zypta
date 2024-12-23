@@ -70,8 +70,8 @@ jobs:
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nesbot/carbon:${{ matrix.carbon }}" "nunomaduro/collision:${{ matrix.collision }}" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
           composer db
-#          npm i
-#          npm run build
+          npm i
+          npm run build
 
       - name: Execute tests
         run: vendor/bin/pest

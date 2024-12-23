@@ -7,11 +7,27 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "bezhansalleh/filament-shield": "^3.3",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
+        "maatwebsite/excel": "^3.1",
+        "stechstudio/filament-impersonate": "^3.15",
+        "tomatophp/filament-accounts": "^2.3",
+        "tomatophp/filament-language-switcher": "^1.0",
+        "tomatophp/filament-menus": "^1.0",
+        "tomatophp/filament-meta": "^1.0",
+        "tomatophp/filament-payments": "^1.0",
+        "tomatophp/filament-saas-panel": "^1.0",
+        "tomatophp/filament-settings-hub": "^2.0",
+        "tomatophp/filament-simple-theme": "^1.0",
+        "tomatophp/filament-subscriptions": "^1.0",
+        "tomatophp/filament-tenancy": "^1.0",
+        "tomatophp/filament-translations": "^2.0",
+        "tomatophp/filament-types": "^2.0",
         "tomatophp/filament-users": "^2.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.14",
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.1",
         "laravel/pint": "^1.13",
@@ -19,13 +35,13 @@
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.1",
         "nunomaduro/larastan": "^2.9",
+        "orchestra/testbench": "^9.5",
         "pestphp/pest": "^2.36",
         "pestphp/pest-plugin-laravel": "^2.4",
         "pestphp/pest-plugin-livewire": "^2.1",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^1.2",
-        "phpstan/phpstan-phpunit": "^1.4",
-        "orchestra/testbench": "^9.5"
+        "phpstan/phpstan-phpunit": "^1.4"
     },
     "autoload": {
         "psr-4": {
