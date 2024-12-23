@@ -39,13 +39,13 @@ use TomatoPHP\FilamentSaasPanel\Traits\InteractsWithTenant;
 class Account extends Authenticatable implements HasAvatar, HasMedia, HasTenants
 {
     use HasFactory;
+    use HasMeta;
+    use HasTeams;
+    use InteractsWithLanguages;
     use InteractsWithMedia;
+    use InteractsWithTenant;
     use Notifiable;
     use SoftDeletes;
-    use HasTeams;
-    use InteractsWithTenant;
-    use InteractsWithLanguages;
-    use HasMeta;
 
     /**
      * @var array
